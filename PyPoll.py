@@ -8,7 +8,7 @@ The data we need to retrieve
 '''
 import csv
 import os
-fileToLoad = os.path.join("Resources", "election_results.csv") #Indirect Path 
+fileToLoad = os.path.join( "Resources", "election_results.csv") #Indirect Path 
 #Assign a variable for the file to load and the path
 #fileToLoad = 'Resources\election_results.csv' #This is the direct path 
 #Open the election results and read the file
@@ -22,3 +22,12 @@ with open(fileToLoad) as election_data:
 #election_data.close()
 #fileToSave = os.path.join()
 #print(fileToLoad)
+# Create a filename variable to a direct or indirect path to the file.
+file_to_save = os.path.join("Analysis", "election_analysis.txt")
+# Using the open() function with the "w" mode we will write data to the file.
+#outFile = open(file_to_save, "w")
+with open(file_to_save, 'w') as outFile:
+#Write data to the file 
+    outFile.write("Counties in the Election\n------------------------\nArapahoe\nDenver\nJefferson")
+#Close File
+#outFile.close()
