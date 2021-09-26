@@ -16,7 +16,18 @@ fileToLoad = os.path.join( "Resources", "election_results.csv") #Indirect Path
 with open(fileToLoad) as election_data:
 
     #To do: perform analysis.
-    print(election_data)
+    #Read the file object with the reader function
+    fileReader = csv.reader(election_data)
+
+    #Print the header row.
+    headers = next(fileReader)
+    print(headers)
+    #Print each row in the CSV file
+    #Next allows us to skip the first row 
+    # Print each row in the CSV file.
+    #for row in fileReader:
+        #print(row)
+    
 
 #CLose the file
 #election_data.close()
