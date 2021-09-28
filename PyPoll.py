@@ -13,10 +13,14 @@ fileToLoad = os.path.join( "Resources", "election_results.csv") #Indirect Path
 #fileToLoad = 'Resources\election_results.csv' #This is the direct path 
 #Open the election results and read the file
 #election_data = open(fileToLoad, 'r')
+county = []
+countyVotes = {}
 candidateOptions = []
 totalVotes = 0 
 candidateVotes = {}
 winningCandidate = ""
+winningCounty = ""
+winningCountyCount = 0
 winningCount = 0
 winningPercentage = 0
 with open(fileToLoad) as election_data:
@@ -36,8 +40,18 @@ with open(fileToLoad) as election_data:
 
         #Print the candidate name from each row 
         candidateName = row[2]
-
-        #This creates a list of the candidates and it will only print their ame the first times it finds it. Will ignnore the rest 
+        #Print the county name from each row
+        countyName = row[1]
+        #Use logical operator to check if the county name is in the county list I created. IF not then append the names to the list 
+        if countyName not in county:
+            #Adding the county names to the list I created 
+            county.append(countyName) 
+            #Write a script that initializes the county vote to zero
+            countyVotes[countyName] = 0 
+            #Add 1 vote to the county everytime it loops through
+        countyVotes[countyName] = countyVotes[countyName] + 1
+        
+        #This creates a list of the candidates and it will only print their name the first times it finds it. Will ignnore the rest 
         if candidateName not in candidateOptions:
         #Add the Candidate name to the candidate list
             candidateOptions.append(candidateName)
@@ -71,6 +85,7 @@ with open(file_to_save, 'w') as txtFile:
     for candidateName in candidateVotes:
     # 2. Retrieve vote count of a candidate. This grabs the value of each key in the dictionary
         votes = candidateVotes[candidateName]
+        print(votes)
     # 3. Calculate the percentage of votes.
         votePercentage = float(votes) / float(totalVotes) * 100
     #Format votePercentage to 22 decimal places
