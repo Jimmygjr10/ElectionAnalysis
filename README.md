@@ -14,7 +14,7 @@ A Colorado Board of Elections employee has given me the following tasks to compl
 - Software: Python 3.6.1, VS Code, 1.38.1
 
 ## Summary
-The analysis of the election sh0w that:
+The analysis of the election show that:
 1. There were 369,711 total votes in the election
 2. The Candidates were:
   -Diana DeGette
@@ -26,3 +26,13 @@ The analysis of the election sh0w that:
   -Diana DaGette received 73.8% of votes and 272,892 votes in total 
  4. The winner of the election
   -Diana DaGette!!!!!
+ 5. The County's were:
+  -Jefferson
+  -Denver
+  -Arapahoe
+ 6. The County results were: 
+  -Jefferson: 10.5% (38,855)
+  -Denver: 82.8% (306,055)
+  -Arapahoe: 6.7% (24,801)
+ 7. The Largest County Turnout:
+  -Denver !!!!!
